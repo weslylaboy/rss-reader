@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Android Central",
+    "avatar": "https://pbs.twimg.com/profile_images/661679787799265280/BokwoEaG_400x400.png",
+    "description": "Android Forums, News, Reviews, Help and Android Wallpapers",
+    "feedLink": "https://www.androidcentral.com/feed"
+  },
+  {
+    "name": "Andriod Police",
+    "avatar": "https://pbs.twimg.com/profile_images/563109834988335104/mYPfSB_b.png",
+    "description": "Looking after everything Android",
+    "feedLink": "http://www.androidpolice.com/feed/"
+  },
+  {
+    "name": "Phandroid",
+    "avatar": "https://pbs.twimg.com/profile_images/738729482698264577/tQcMIgd1.jpg",
+    "description": "Android Phone News, Rumors, Reviews, Apps, Forums & More!",
+    "feedLink": "http://feeds2.feedburner.com/AndroidPhoneFans"
+  }
+]

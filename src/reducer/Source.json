@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Phandroid",
+    "avatar": "https://pbs.twimg.com/profile_images/738729482698264577/tQcMIgd1.jpg",
+    "feed": {
+      "1": {
+        "title": "LG G6: One Month Later",
+        "image": "http://phandroid.s3.amazonaws.com/wp-content/uploads/2017/05/g-6-month-6-1600x997.png",
+        "article": "When a new phone is launched, especially a flagship phone like the LG G6, there is a lot of fanfare up front. Tons of reviews are posted when the embargo is lifted, but after that, you don’t hear much about the device. The industry quickly moves on to the next new thing. That’s not fair to people who buy a phone and stick with it for two years. How a phone ages over time is important to a lot of people. It’s been about one month since I posted my review of the LG G6, and I’ve been using the G6 as my daily phone for the better part of six weeks. Now that the initial hype has died down, I can share some long-term thoughts on the device. As a quick refresher, here’s the bottom line from my original review.",
+        "read": true
+      },
+      "2": {
+        "title": "The biggest Samsung Gear S3 update is rolling out now",
+        "image": "http://phandroid.com/wp-content/uploads/2016/09/samsung-gear-s3-14-150x150.jpg",
+        "article": "Earlier today we learned that AT&T would begin offering the Samsung Gear S3 smartwatch starting this Friday. There may be some of you that aren’t too keen on picking up a smartwatch that isn’t powered by Android Wear, but there’s an update rolling out to the smartwatch that may help change your mind. The update brings many new features to the Gear S3 while fulfilling some promises that were made at launch in regards to partner applications. Before jumping too far ahead, the update comes with a build number of 2.3.2.3 for TizenOS on the Gear S3. \n\nThere are some minor bug fix updates included to improve stability, but users will now be able to do things such as add date and music complications to watch faces. This essentially means that you can add widgets to your watch face, making it easier to access your favorite apps and change the way you view the date from your wrist.",
+        "read":false
+      }
+    }
+  },
+  {
+    "name": "Andriod Police",
+    "avatar": "https://pbs.twimg.com/profile_images/563109834988335104/mYPfSB_b.png",
+    "feed": {
+      "1": {
+        "title": "The Galaxy S8 Active has been leaked by the Wireless Power Consortium",
+        "image": "http://www.androidpolice.com/wp-content/uploads/2017/05/nexus2cee_galaxy-s8-active-hero.png",
+        "article": "The Wireless Power Consortium was formed in 2008, to promote the Qi wireless charging technology in consumer products. It looks like someone at the WPC has messed up, as the unannounced Galaxy S8 Active has appeared on the site. \n\n The below picture gives us our first look at the S8 Active, and it definitely looks sleeker than the previous models. It doesn't have the same edge-to-edge Infinity Screen, but the top and bottom bezels look roughly the same size. In fact, it looks a lot like the LG G6. \n\n The page also reveals that the S8 Active's model number is 'SM-G892A,' and as you might expect from being on the WPC's website, it supports Qi wireless charging. Unfortunately, there's no side photo, so we don't know for sure how hefty it will be.",
+        "read":false
+      },
+      "2": {
+        "title": "PayPal integration in Android Pay is going live",
+        "image": "http://www.androidpolice.com/wp-content/uploads/2017/05/nexus2cee_image-6.png",
+        "article": "PayPal integration in Android Pay has been a long time coming. We first spotted it in a teardown back in January, and an official announcement came last month. Now the feature appears to be going live, at least for some users. \n\n In addition to the below splash screen that some users are seeing, the page for supported banks and cards has been updated to include PayPal. The page says that any banks or cards that PayPal supports will work with Android Pay, so if your bank/card provider has been slow to adopt Android Pay, this can be a workaround.",
+        "read":false
+      }
+    }
+  },
+  {
+    "name": "Android Central",
+    "avatar": "https://pbs.twimg.com/profile_images/661679787799265280/BokwoEaG_400x400.png",
+    "feed": {
+      "1": {
+        "title": "Give your friends a reason to snap with Snapchat's custom stories",
+        "image": "https://www.androidcentral.com/sites/androidcentral.com/files/styles/w800h450crop/public/article_images/2017/05/snapchat.jpg",
+        "article": "A new Snapchat feature could help you when encouraging your friends to at least install the Snapchat app for the weekend. Snap has introduced custom Stories, which are designed to help friends and family groups collectively snap even the most mundane of events on the fly.\n\n Custom Stories are easy to set up and don't require that much planning beforehand. Tap the new Create Story icon in the top-right corner of the main Stories screen. Type in a name for the event, and then invite your friends. You can extend the invitation to anyone you'd like to participate in the as-it-happens festivities, regardless of their location. The new feature isn't geofenced. You can also invite nearby Snapchat users to participate if it's, say, a public event, like a high school prom or college graduation. Snapchat will create a one-block geofence around your current location.\n\n Custom Stories will stay up on the main Stories page for as long as they are live, or until no one contributes for 24 hours. Each user is limited to three custom Stories at a time.",
+        "read":false
+      },
+      "2": {
+        "title": "Amazon's Kids Edition Fire Tablet is worth the extra spend",
+        "image": "https://www.androidcentral.com/sites/androidcentral.com/files/styles/w800h450crop/public/article_images/2017/01/fire-tablet-rear-blue.jpg",
+        "article": "The Amazon Fire Tablet 7 is a great buy at $50, especially for the kids. It's capable enough to keep them entertained while not costing enough to pull your hair out if it gets accidentally destroyed. You can also get all the (non-Google) major content services on there as well as a dedicated kids mode to keep those little fingers from buying a new laptop on your Amazon account.\n\n But, when you go to buy, there's both a \"regular\" 7-inch and a Kids Edition, which now also has an 8-inch version. Underneath they're both regular Amazon Fire tablets. So what's the difference and which should you buy? \n\nLets break it down.",
+        "read":false
+      }
+    }
+  }
+]
