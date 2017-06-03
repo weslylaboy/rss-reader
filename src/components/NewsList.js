@@ -40,7 +40,7 @@ class NewsList extends Component {
                 <View>
                     <View style={rowText}>
                         <Text style={[title, rowData.read && read ]} >{rowData.title}</Text>
-                        <Text style={preview} numberOfLines={2}  > {rowData.content} </Text>
+                        <Text style={preview} numberOfLines={2}  > {rowData.description} </Text>
                     </View>
                     <Image
                         source={{uri: rowData.image}}

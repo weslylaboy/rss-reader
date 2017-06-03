@@ -4,13 +4,25 @@ import { connect } from 'react-redux';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { markAsRead } from '../actions';
 import Colors from '../styles/Styles';
+import HTMLView from 'react-native-htmlview';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
+
+function renderNode(node, index, siblings, parent, defaultRenderer) {
+    if (node.name == 'img') {
+        const a = node.attribs;
+        console.log(a.width);
+        return (
+                <Image
+                    style={{ width: responsiveWidth(100), height: responsiveHeight(75)}}
+                    source={{uri: a.src }}
+                />
+        );
+    }
+}
 
 class Article extends Component {
     componentDidMount() {
-        console.log('Content: ' + this.props.content);
-       // console.log('Did mount. Read?: '+ JSON.stringify(this.props));
         this.props.markAsRead(this.props);
-       // console.log('After action called. Read?: ' + JSON.stringify(this.props));
     }
 
     render() {
@@ -47,7 +59,13 @@ class Article extends Component {
 
                     <View style={{ height: 'auto' }}>
                         <Text style={styles.articleTitle}>{this.props.title}</Text>
-                        <Text style={styles.articleStyle}>{this.props.content}</Text>
+                        <HTMLView
+                            style={styles.htmlWrapper}
+                            value={this.props.content}
+                            stylesheet={html}
+                            renderNode={renderNode}
+                        />
+                        {/*<Text style={styles.articleStyle}>{this.props.content}</Text>*/}
                     </View>
                 </ParallaxScrollView>
             </View>
@@ -100,9 +118,23 @@ const styles = {
         lineHeight: 25,
         margin: 30,
         color: '#333333',
-        textAlign: 'justify'
+        textAlign: 'justify',
+    },
+    htmlWrapper: {
+        margin: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
     }
+};
 
+const html = {
+    p: {
+        fontSize: 15,
+        fontFamily: 'lora_regular',
+        color: '#333333',
+        lineHeight: 25,
+        textAlign: 'right',
+    }
 };
 
 const mapStateToProps = (state) => {
