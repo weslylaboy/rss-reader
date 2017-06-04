@@ -1,5 +1,11 @@
 [
   {
+    "name": "Android Authority",
+    "avatar": "http://beta2.androidauthority.com/wp-content/uploads/feed/aa-mascot-192x192.png",
+    "description": "Android News, Reviews, How To",
+    "feedLink": "http://feed.androidauthority.com/"
+  },
+  {
     "name": "Android Central",
     "avatar": "https://pbs.twimg.com/profile_images/661679787799265280/BokwoEaG_400x400.png",
     "description": "Android Forums, News, Reviews, Help and Android Wallpapers",
@@ -16,5 +22,11 @@
     "avatar": "https://pbs.twimg.com/profile_images/738729482698264577/tQcMIgd1.jpg",
     "description": "Android Phone News, Rumors, Reviews, Apps, Forums & More!",
     "feedLink": "http://feeds2.feedburner.com/AndroidPhoneFans"
+  },
+  {
+    "name": "XDA-Developer",
+    "avatar": "https://lh3.googleusercontent.com/bqTpjg0lBSLEdbz9y7IN1UB1LAScZXnQVuZ3bg6-t39B7SZfKPd2OLJMJ-jWfnW56fI=w300",
+    "description": "Android and Windows Phone Development Community",
+    "feedLink": "https://www.xda-developers.com/feed/"
   }
 ]

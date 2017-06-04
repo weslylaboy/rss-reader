@@ -13,13 +13,7 @@ import { Actions } from 'react-native-router-flux';
 
 class Home extends Component {
     componentWillMount() {
-        const links = [
-            'https://www.androidcentral.com/feed',
-            'http://www.androidpolice.com/feed/',
-            'http://feeds2.feedburner.com/AndroidPhoneFans'
-        ];
-
-        this.props.feedFetch(links);
+        this.props.feedFetch(this.props.sources);
     }
 
     render() {
@@ -67,8 +61,10 @@ const styles = {
 
 const mapStateToProps = state => {
     const feed = state.feed;
-   // console.log("Feed home: " + JSON.stringify(feed));
-    return { feed };
+    const sources = _.map(state.sources, (value) => {
+        return  value['feedLink'];
+    });
+    return { feed, sources };
 };
 
 export default connect(mapStateToProps, { feedFetch })(Home);

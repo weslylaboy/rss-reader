@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import SourceReducer from './SourceReducer';
 import SourcesReducer from './SourcesReducer';
 import FeedSelectionReducer from './FeedSelectionReducer';
 import FeedsReducer from'./FeedsReducer';
