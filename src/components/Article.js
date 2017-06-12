@@ -10,7 +10,6 @@ import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimen
 function renderNode(node, index, siblings, parent, defaultRenderer) {
     if (node.name == 'img') {
         const a = node.attribs;
-        console.log(a.width);
         return (
                 <Image
                     style={{ width: responsiveWidth(100), height: responsiveHeight(75)}}
@@ -22,7 +21,8 @@ function renderNode(node, index, siblings, parent, defaultRenderer) {
 
 class Article extends Component {
     componentDidMount() {
-        this.props.markAsRead(this.props);
+        console.log('Read: ' + this.props.read);
+        this.props.markAsRead(this.props.article);
     }
 
     render() {
@@ -139,7 +139,7 @@ const html = {
 
 const mapStateToProps = (state) => {
     const article  = state.selectedArticle;
-    return article;
+    return { article };
 };
 
 export default connect(mapStateToProps, { markAsRead })(Article);

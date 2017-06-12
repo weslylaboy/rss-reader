@@ -26,7 +26,7 @@ class Sidebar extends Component {
                 >
                     <Image
                         style={topAvatar}
-                        source={{uri: 'https://img.clipartfox.com/e475706a2e1b9eb9305f49d6cbbce3b5_reverse-flash-poster-reverse-flash-clipart_340-270.jpeg'}}
+                        source={{uri: 'https://cdn.pixabay.com/photo/2017/03/24/07/28/rss-2170424_960_720.png' }}
                     />
                 </Image>
 
