@@ -6,7 +6,7 @@ import {
     FEED_FETCH_SUCCESS
 } from './types';
 
-const server = 'http://192.168.0.10:3000/rss/?feed=';
+const server = 'http://192.168.0.165:3000/rss/?feed=';
 //const server = 'https://fetcher-rss.herokuapp.com/rss/?feed=';
 
 export const selectFeed = ( feedLink, name ) => {

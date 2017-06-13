@@ -20,7 +20,7 @@ class Home extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Welcome to React Native!
+                    Welcome to News reader!
                 </Text>
                 <Text style={styles.instructions}>
                     To get started, edit index.android.js
@@ -29,12 +29,8 @@ class Home extends Component {
                     Double tap R on your keyboard to reload,{'\n'}
                     Shake or press menu button for dev menu
                 </Text>
-                <Text>Test</Text>
-                <Button
-                    onPress={() => { Actions.newsList() }}
-                    raised
-                    icon={{name: 'cached'}}
-                    title='Button' />
+
+                <Text style={styles.welcome}>You have {_.size(this.props.feed)} Feed Sources</Text>
             </View>
         );
     }

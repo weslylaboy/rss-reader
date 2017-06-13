@@ -21,8 +21,14 @@ function renderNode(node, index, siblings, parent, defaultRenderer) {
 
 class Article extends Component {
     componentDidMount() {
-        console.log('Read: ' + this.props.read);
+        console.log('Read: ' + this.props.article.read);
         this.props.markAsRead(this.props.article);
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log('Read: ' + this.props.article.read);
+
+        this.props.markAsRead(nextProps.article);
     }
 
     render() {
@@ -35,7 +41,7 @@ class Article extends Component {
                     stickyHeaderHeight={54}
                     renderBackground={() => (
                         <View key="background">
-                            <Image source={{uri: this.props.image,
+                            <Image source={{uri: this.props.article.image,
                                 width: window.width,
                                 height: PARALLAX_HEADER_HEIGHT }}
                             />
@@ -58,10 +64,10 @@ class Article extends Component {
                 >
 
                     <View style={{ height: 'auto' }}>
-                        <Text style={styles.articleTitle}>{this.props.title}</Text>
+                        <Text style={styles.articleTitle}>{this.props.article.title}</Text>
                         <HTMLView
                             style={styles.htmlWrapper}
-                            value={this.props.content}
+                            value={this.props.article.content}
                             stylesheet={html}
                             renderNode={renderNode}
                         />

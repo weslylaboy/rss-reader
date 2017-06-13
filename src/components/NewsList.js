@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ListView, Image, TouchableWithoutFeedback } from 'react-native';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import Triangle from 'react-native-triangle';
@@ -12,13 +13,12 @@ class NewsList extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log('Calling NExtProps')
         if(this.props.name !== nextProps.name){
             Actions.refresh({key: 'newsList', title: nextProps.name });
         }
-
         this.createDataSource(nextProps.feed);
     }
-
 
     createDataSource( feed ){
         const ds = new ListView.DataSource({
@@ -62,6 +62,7 @@ class NewsList extends Component {
     render() {
         return (
             <View style={{paddingTop: 55}}>
+                <Text>{this.props.feed[0].read + ' '}</Text>
                 <ListView
                     dataSource={this.dataSource}
                     renderRow={
@@ -101,7 +102,7 @@ const styles = {
 
 const mapStateToProps = (state) => {
     const { feedLink, name} = state.selectedFeed;
-    const feed = state.feed[feedLink];
+    const feed = state.feed[feedLink].items;
     return  { feed, name };
 };
 
