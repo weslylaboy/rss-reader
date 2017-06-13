@@ -62,7 +62,6 @@ class NewsList extends Component {
     render() {
         return (
             <View style={{paddingTop: 55}}>
-                <Text>{this.props.feed[0].read + ' '}</Text>
                 <ListView
                     dataSource={this.dataSource}
                     renderRow={
