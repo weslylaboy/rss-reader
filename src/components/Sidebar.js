@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { View, ListView, Image } from 'react-native';
+import _ from 'lodash';
 import { connect } from 'react-redux';
-import { ListItem } from 'react-native-elements'
+import { ListItem, Badge } from 'react-native-elements'
 import { Actions } from 'react-native-router-flux';
 import { selectFeed } from '../actions';
 
 class Sidebar extends Component {
+
     componentWillMount() {
         const ds = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 != r2
@@ -13,10 +15,17 @@ class Sidebar extends Component {
         this.dataSource = ds.cloneWithRows(this.props.sources);
     }
 
+    componentWillReceiveProps(){
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 != r2
+        });
+        this.dataSource = ds.cloneWithRows(this.props.sources);
+
+    }
+
     render() {
         const {
-            topBackground, topAvatar, listItemStyle, listAvatar, listTitleStyle, listSubtitleStyle
-        } = styles;
+            topBackground, topAvatar, listItemStyle, listAvatar, listTitleStyle } = styles;
 
         return (
             <View>
@@ -29,7 +38,6 @@ class Sidebar extends Component {
                         source={{uri: 'https://cdn.pixabay.com/photo/2017/03/24/07/28/rss-2170424_960_720.png' }}
                     />
                 </Image>
-
                 <ListView
                     dataSource={this.dataSource}
                     renderRow={
@@ -39,7 +47,7 @@ class Sidebar extends Component {
                                 hideChevron
                                 roundAvatar
                                 onPress={() => {
-                                   // console.log("Pressed: "+ JSON.stringify(rowData));
+                                    // console.log("Pressed: "+ JSON.stringify(rowData));
                                     this.props.selectFeed(rowData.feedLink, rowData.name);
                                     Actions.refresh({key: 'drawer', open: value => !value});
                                     Actions.newsList({ title: rowData.name});
@@ -48,8 +56,14 @@ class Sidebar extends Component {
                                 avatarStyle={listAvatar}
                                 title={rowData.name}
                                 titleStyle={listTitleStyle}
-                                subtitle={rowData.description}
-                                subtitleStyle={listSubtitleStyle}
+                                badge={{ element: <Badge
+                                    containerStyle={{ marginTop: 2}}
+                                    value={this.props.badge[rowData.feedLink]}
+                                    textStyle={{ fontFamily: 'bariol_bold' }}
+                                />}}
+                               // badge={{ value:  this.props.badge[rowData.feedLink], badgeTextStyle: { color: 'orange' }, badgeContainerStyle: { marginTop: -20 } }}
+                                // subtitle={rowData.description}
+                                //subtitleStyle={listSubtitleStyle}
                             />
                         )
                     }
@@ -72,19 +86,21 @@ const styles = {
         alignSelf: 'center'
     },
     listItemStyle: {
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft:10
+        flex: 1,
+        marginTop: 0,
+        marginBottom: 5,
+        marginLeft: 10
     },
     listAvatar: {
-        width: 40,
-        height: 40,
+        width: 30,
+        height: 30,
         borderRadius: 50
     },
     listTitleStyle: {
         color: '#000',
         fontSize: 16,
-        paddingLeft: 10
+        fontFamily: 'opensans_bold',
+        marginLeft: 14
     },
     listSubtitleStyle: {
         paddingLeft: 10
@@ -93,8 +109,21 @@ const styles = {
 
 const mapStateToProps = (state) => {
     const selectedSource = state.selectedFeed;
-    console.log('SelectedSource: ' + JSON.stringify(selectedSource));
-    return { selectedSource };
+    const news = state.feed;
+    var badge = {};
+    if(_.size(news)) {
+        _.forEach(news, function (feeds, feedLink) {
+            var counter = 0;
+            _.forEach(news[feedLink].items, function (item) {
+                if (!item.read)
+                    counter++;
+            });
+            badge[feedLink] = counter
+
+
+        });
+    }
+    return { selectedSource, news, badge };
 };
 
 export default connect(mapStateToProps, {selectFeed})(Sidebar);

@@ -39,7 +39,6 @@ const drawerStyles = {
 };
 
 const mapStateToProps = state => {
-    const sources = state.sources;
     return { sources: state.sources };
 };
 

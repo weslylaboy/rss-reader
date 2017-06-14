@@ -13,7 +13,6 @@ class NewsList extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('Calling NExtProps')
         if(this.props.name !== nextProps.name){
             Actions.refresh({key: 'newsList', title: nextProps.name });
         }
@@ -32,7 +31,6 @@ class NewsList extends Component {
         const { rowText, title, preview, image, triangle, read } = styles;
         return(
             <TouchableWithoutFeedback onPress={ () => {
-                //console.log('Pressed article status: ' + rowData.read)
                 this.props.selectArticle(rowData);
                 Actions.article();
                 }}

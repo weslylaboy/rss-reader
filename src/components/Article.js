@@ -21,13 +21,10 @@ function renderNode(node, index, siblings, parent, defaultRenderer) {
 
 class Article extends Component {
     componentDidMount() {
-        console.log('Read: ' + this.props.article.read);
         this.props.markAsRead(this.props.article);
     }
 
     componentWillReceiveProps(nextProps){
-        console.log('Read: ' + this.props.article.read);
-
         this.props.markAsRead(nextProps.article);
     }
 
