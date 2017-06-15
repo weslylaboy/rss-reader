@@ -6,6 +6,7 @@ import { Icon } from 'react-native-elements'
 import Home from './components/Home';
 import NewsList from './components/NewsList';
 import Article from './components/Article';
+import Splash from './components/Spash';
 
 const RouterComponent = () => {
     const { titleStyle, articleNavBarStyle } = styles;
@@ -27,14 +28,13 @@ const RouterComponent = () => {
         <Router>
             <Scene key="drawer" component={NavigationDrawer} open={false} >
                 <Scene key="main">
+                    <Scene key="splash" component={Splash} hideNavBar initial reset />
                     <Scene
                         key="home"
                         component={Home}
                         title="Home"
                         titleStyle={titleStyle}
                         renderLeftButton={this.renderLeftButton}
-                        initial
-                        reset
                     />
                     <Scene
                         key="newsList"

@@ -35,7 +35,7 @@ class Sidebar extends Component {
                 >
                     <Image
                         style={topAvatar}
-                        source={{uri: 'https://cdn.pixabay.com/photo/2017/03/24/07/28/rss-2170424_960_720.png' }}
+                        source={require('../assets/images/rss_icon.png')}
                     />
                 </Image>
                 <ListView

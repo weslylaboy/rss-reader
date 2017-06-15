@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Actions } from 'react-native-router-flux';
 import {
     SELECT_FEED,
     SELECT_ARTICLE,
@@ -39,7 +40,9 @@ export const feedFetch = ( sources ) => {
         axios.get(server + sources)
             .then(response => {
                 console.log('Dispatching...')
-                dispatch({ type: FEED_FETCH_SUCCESS, payload: response.data })
+                dispatch({ type: FEED_FETCH_SUCCESS, payload: response.data });
+                //Actions.home({ type: 'reset' });
+
             })
             .catch(error => console.log(error));
 

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-    StyleSheet,
+    Image,
     Text,
     View
 } from 'react-native';
@@ -11,26 +11,22 @@ import { Button } from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 
 
-class Home extends Component {
-    // componentWillMount() {
-    //     this.props.feedFetch(this.props.sources);
-    // }
+class Spash extends Component {
+    componentWillMount() {
+        console.log('SPlash...')
+        this.props.feedFetch(this.props.sources);
+    }
 
     render() {
         return (
             <View style={styles.container}>
+                <Image
+                    style={styles.image}
+                    source={require('../assets/images/rss_icon.png')}
+                />
                 <Text style={styles.welcome}>
-                    Welcome to News reader!
+                    Splash me baby!
                 </Text>
-                <Text style={styles.instructions}>
-                    To get started, edit index.android.js
-                </Text>
-                <Text style={styles.instructions}>
-                    Double tap R on your keyboard to reload,{'\n'}
-                    Shake or press menu button for dev menu
-                </Text>
-
-                <Text style={styles.welcome}>You have {_.size(this.props.feed)} Feed Sources</Text>
             </View>
         );
     }
@@ -39,19 +35,18 @@ class Home extends Component {
 const styles = {
     container: {
         flex: 1,
-        justifyContent: 'center',
+      //  justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
     welcome: {
         fontSize: 20,
+        alignContent: 'center',
         textAlign: 'center',
         margin: 10,
     },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
+    image: {
+        marginTop: 70,
     },
 };
 
@@ -63,4 +58,4 @@ const mapStateToProps = state => {
     return { feed, sources };
 };
 
-export default connect(mapStateToProps, { feedFetch })(Home);
+export default connect(mapStateToProps, { feedFetch })(Spash);
