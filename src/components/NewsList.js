@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, ListView, Image, TouchableWithoutFeedback } from 'react-native';
-import _ from 'lodash';
+import {
+    View,
+    Text,
+    ListView,
+    Image,
+    TouchableWithoutFeedback,
+    RefreshControl
+} from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import Triangle from 'react-native-triangle';
 import { selectArticle } from '../actions';
 
 class NewsList extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            refreshing: false,
+        };
+    }
+
     componentWillMount() {
         Actions.refresh({key: 'drawer', open: value => !value});
         this.createDataSource(this.props.feed)
@@ -33,7 +46,7 @@ class NewsList extends Component {
             <TouchableWithoutFeedback onPress={ () => {
                 this.props.selectArticle(rowData);
                 Actions.article();
-                }}
+            }}
             >
                 <View>
                     <View style={rowText}>
@@ -57,10 +70,31 @@ class NewsList extends Component {
         )
     }
 
+    _onRefresh() {
+        this.setState({isRefreshing: true});
+        setTimeout(() => {
+            // prepend 10 items
+            console.log('ON Refresh called');
+            // fetchData().then(() => {
+            //     this.setState({refreshing: false});
+            // });
+            this.setState({
+                loaded: this.state.loaded + 10,
+                isRefreshing: false,
+            });
+        }, 5000);
+    }
+
     render() {
         return (
             <View style={{paddingTop: 55}}>
                 <ListView
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.refreshing}
+                            onRefresh={this._onRefresh.bind(this)}
+                        />
+                    }
                     dataSource={this.dataSource}
                     renderRow={
                         (rowData) => (
