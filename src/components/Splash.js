@@ -7,11 +7,9 @@ import {
     View
 } from 'react-native';
 import { feedFetch } from '../actions';
-import { Button } from 'react-native-elements';
-import { Actions } from 'react-native-router-flux';
+import Spinner from 'react-native-spinkit';
 
-
-class Spash extends Component {
+class Splash extends Component {
     componentWillMount() {
         console.log('SPlash...')
         this.props.feedFetch(this.props.sources);
@@ -21,12 +19,11 @@ class Spash extends Component {
         return (
             <View style={styles.container}>
                 <Image
-                    style={styles.image}
+                    style={styles.icon}
                     source={require('../assets/images/rss_icon.png')}
                 />
-                <Text style={styles.welcome}>
-                    Splash me baby!
-                </Text>
+
+                <Spinner style={styles.spinner} isVisible={true} size={100} type={'ThreeBounce'} color={"#46cfa0"}/>
             </View>
         );
     }
@@ -35,7 +32,7 @@ class Spash extends Component {
 const styles = {
     container: {
         flex: 1,
-      //  justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
@@ -45,9 +42,15 @@ const styles = {
         textAlign: 'center',
         margin: 10,
     },
-    image: {
+    icon: {
         marginTop: 70,
+        width: 120,
+        height: 120
     },
+    spinner: {
+        alignItems: 'center',
+        marginBottom: 30
+    }
 };
 
 const mapStateToProps = state => {
@@ -58,4 +61,4 @@ const mapStateToProps = state => {
     return { feed, sources };
 };
 
-export default connect(mapStateToProps, { feedFetch })(Spash);
+export default connect(mapStateToProps, { feedFetch })(Splash);

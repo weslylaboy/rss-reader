@@ -41,7 +41,7 @@ export const feedFetch = ( sources ) => {
             .then(response => {
                 console.log('Dispatching...')
                 dispatch({ type: FEED_FETCH_SUCCESS, payload: response.data });
-                //Actions.home({ type: 'reset' });
+                Actions.home({ type: 'reset' });
 
             })
             .catch(error => console.log(error));

@@ -6,7 +6,7 @@ import { Icon } from 'react-native-elements'
 import Home from './components/Home';
 import NewsList from './components/NewsList';
 import Article from './components/Article';
-import Splash from './components/Spash';
+import Splash from './components/Splash';
 
 const RouterComponent = () => {
     const { titleStyle, articleNavBarStyle } = styles;

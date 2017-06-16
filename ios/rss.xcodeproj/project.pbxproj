@@ -76,6 +76,7 @@
 		0E41277B5B824A80A876562D /* opensans_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FE81BDDC04F4DCD8B7EA148 /* opensans_regular.ttf */; };
 		6F67D46A63FC473088807770 /* opensans_semi_bold_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3A7375AF5CB4E52AF098693 /* opensans_semi_bold_italic.ttf */; };
 		34AE41F8D6F2448ABB7FE5D5 /* opensans_semi_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC13587D057143DFB0B5CE67 /* opensans_semi_bold.ttf */; };
+		06830B4F6E9847609F5553A0 /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F683E81A2F4A45B7C7DCC3 /* libRNSpinkit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -337,6 +338,8 @@
 		7FE81BDDC04F4DCD8B7EA148 /* opensans_regular.ttf */ = {isa = PBXFileReference; name = "opensans_regular.ttf"; path = "../src/assets/fonts/opensans_regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D3A7375AF5CB4E52AF098693 /* opensans_semi_bold_italic.ttf */ = {isa = PBXFileReference; name = "opensans_semi_bold_italic.ttf"; path = "../src/assets/fonts/opensans_semi_bold_italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AC13587D057143DFB0B5CE67 /* opensans_semi_bold.ttf */ = {isa = PBXFileReference; name = "opensans_semi_bold.ttf"; path = "../src/assets/fonts/opensans_semi_bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F0C2703B576C4B7BA39803B7 /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; name = "RNSpinkit.xcodeproj"; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C9F683E81A2F4A45B7C7DCC3 /* libRNSpinkit.a */ = {isa = PBXFileReference; name = "libRNSpinkit.a"; path = "libRNSpinkit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +367,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				8354205437464B8D927B733D /* libRNVectorIcons.a in Frameworks */,
+				06830B4F6E9847609F5553A0 /* libRNSpinkit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +535,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				B1CD2D608E8C457996F72E8D /* RNVectorIcons.xcodeproj */,
+				F0C2703B576C4B7BA39803B7 /* RNSpinkit.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1148,10 +1153,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-spinkit\ios/**",
 				);
 			};
 			name = Debug;
@@ -1173,10 +1180,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-spinkit\ios/**",
 				);
 			};
 			name = Release;
@@ -1199,6 +1208,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-spinkit\ios/**",
 				);
 			};
 			name = Debug;
@@ -1220,6 +1230,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-spinkit\ios/**",
 				);
 			};
 			name = Release;
@@ -1250,10 +1261,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-spinkit\ios/**",
 				);
 			};
 			name = Debug;
@@ -1284,10 +1297,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-spinkit\ios/**",
 				);
 			};
 			name = Release;
@@ -1313,6 +1328,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1337,6 +1353,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
