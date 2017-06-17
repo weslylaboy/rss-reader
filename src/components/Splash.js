@@ -11,7 +11,6 @@ import Spinner from 'react-native-spinkit';
 
 class Splash extends Component {
     componentWillMount() {
-        console.log('SPlash...')
         this.props.feedFetch(this.props.sources);
     }
 
