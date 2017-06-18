@@ -22,6 +22,7 @@
     "react-native-triangle": "0.0.7",
     "react-native-vector-icons": "^4.0.1",
     "react-redux": "^5.0.4",
+    "realm": "^1.8.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
   },
