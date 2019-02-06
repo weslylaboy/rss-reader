@@ -8,7 +8,7 @@ import {
 } from './types';
 
 //const server = 'http://192.168.0.165:3000/rss/?feed=';
-const server = 'https://fetcher-rss.herokuapp.com/rss/?feed=';
+const server = 'https://fetcher-rss.herokuapp.com/rss/?feed=http://feed.androidauthority.com/';
 
 export const selectFeed = ( feedLink, name ) => {
     return {
@@ -37,7 +37,7 @@ export const markAsRead = ( feed ) => {
 
 export const feedFetch = ( sources ) => {
     return(dispatch) => {
-        axios.get(server + sources)
+        axios.get(server )
             .then(response => {
                 console.log('Dispatching...')
                 dispatch({ type: FEED_FETCH_SUCCESS, payload: response.data });
